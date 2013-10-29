@@ -10,7 +10,7 @@ object Welcome extends Controller {
   }
   
   def formSubmit = Action {
-    
+    Ok(views.html.form())
   }
 
 }
