@@ -19,7 +19,7 @@ object Welcome extends Controller {
   }
   
   def formSubmit = Action {
-    var params = form.bindFromRequest.post
+    var params = form.bindFromRequest
     Ok("done")
   }
 
