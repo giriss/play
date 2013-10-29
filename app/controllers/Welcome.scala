@@ -9,8 +9,8 @@ object Welcome extends Controller {
   
   var form = Form(
     tuple(
-      "name" -> text,
-      "password" -> text
+      "password" -> text,
+      "name" -> text
       )
     )
 
