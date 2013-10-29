@@ -8,5 +8,9 @@ object Welcome extends Controller {
   def index = Action {
     Ok("Hello Scala!!")
   }
+  
+  def formSubmit = Action {
+    
+  }
 
 }
