@@ -6,11 +6,12 @@ import play.api.mvc._
 object Welcome extends Controller {
 
   def index = Action {
-    Ok("Hello Scala!!")
+    Ok(views.html.form)
   }
   
   def formSubmit = Action {
-    Ok(views.html.form())
+    DynamicForm params = form.bindFromRequest
+    Ok()
   }
 
 }
