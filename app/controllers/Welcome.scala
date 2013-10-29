@@ -19,8 +19,8 @@ object Welcome extends Controller {
   }
   
   def formSubmit = Action { implicit request =>
-    var param : String = param.bindFromRequest.get("name")
-    Ok(param)
+    var param = form.bindFromRequest.get
+    Ok(param._1)
   }
 
 }
