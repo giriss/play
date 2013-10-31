@@ -22,7 +22,7 @@ object Application extends Controller {
   
   def newTask = Action { implicit request =>
     taskForm.bindFromRequest.fold(
-      errors => BadRequest(views.html.index(Task.all(), errors)),
+      errors => BadRequest(views.html.task(Task.all(), errors)),
       label => {
         Task.create(label)
         Redirect(routes.Application.tasks)
