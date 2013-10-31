@@ -15,11 +15,11 @@ object Welcome extends Controller {
     )
 
   def index = Action { request =>
-    Ok(request+"<br />"+views.html.form())
+    Ok(views.html.form(request))
   }
   
   def formSubmit = Action { implicit request =>
-    var param        = form.bindFromRequest.get
+    var param = form.bindFromRequest.get
     Ok(views.html.submit(param._1, param._2))
   }
 
