@@ -8,5 +8,11 @@ object Application extends Controller {
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
   }
+  
+  def task = TODO
+  
+  def newTask = TODO
+  
+  def deleteTask(id : Long) = TODO
 
 }
