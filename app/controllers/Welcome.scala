@@ -20,8 +20,7 @@ object Welcome extends Controller {
   
   def formSubmit = Action { implicit request =>
     var param        = form.bindFromRequest.get
-    var ret : String = "you submitted name: ".concat(param._1).concat(", password: ").concat(param._2)
-    Ok(views.html.submit(ret))
+    Ok(views.html.submit(param._1, param._2))
   }
 
 }
