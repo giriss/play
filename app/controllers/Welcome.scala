@@ -14,8 +14,8 @@ object Welcome extends Controller {
       )
     )
 
-  def index = Action {
-    Ok(views.html.form())
+  def index = Action { request =>
+    Ok("'"+request+"'")
   }
   
   def formSubmit = Action { implicit request =>
