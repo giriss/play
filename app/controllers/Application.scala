@@ -3,6 +3,7 @@ package controllers
 import play.api._
 import play.api.mvc._
 import play.api.data.Forms._
+import models.Task
 
 val taskForm = Form(
   "label" -> nonEmptyText
@@ -18,7 +19,9 @@ object Application extends Controller {
     Ok(views.html.task(Task.all(), taskForm))
   }
   
-  def newTask = TODO
+  def newTask = Action { implicit request =>
+    taskForm.bindFromRequest()
+  }
   
   def deleteTask(id : Long) = TODO
 
