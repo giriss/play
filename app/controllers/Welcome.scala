@@ -19,7 +19,7 @@ object Welcome extends Controller {
   }
   
   def formSubmit = Action { implicit request =>
-    var param = form.bindFromRequest.get
+    var param = tuple("name" -> text, "password" -> text).bindFromRequest.get
     Ok(param._1)
   }
 
