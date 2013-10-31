@@ -4,10 +4,10 @@ case class Task(id : Long, label : String)
 
 object Task {
   
-  def all()
+  def all() : List[Task] = Nil
   
-  def create()
+  def create(label : String){}
   
-  def delete()
+  def delete(id : Long){}
   
 }
