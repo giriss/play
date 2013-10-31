@@ -5,11 +5,11 @@ import play.api.mvc._
 import play.api.data.Forms._
 import models.Task
 
-val taskForm = Form(
-  "label" -> nonEmptyText
-)
 
 object Application extends Controller {
+  val taskForm = Form(
+    "label" -> nonEmptyText
+  )
 
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
