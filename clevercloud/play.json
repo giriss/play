@@ -4,6 +4,6 @@
     "env": "development"
   },
   "hooks": {
-     "postDeploy": "pathtoyourscript"
+     "postDeploy": "clevercloud/play.json"
   }
 }
