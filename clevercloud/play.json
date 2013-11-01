@@ -1,6 +1,9 @@
 {
   "deploy": {
     "goal": "-Dplay.version=2.2.0",
-    "env": "dev"
+    "env": "development"
+  },
+  "hooks": {
+     "postDeploy": "pathtoyourscript"
   }
 }
