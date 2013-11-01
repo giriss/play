@@ -1,7 +1,7 @@
 {
   "deploy": {
-    "goal": "-Dplay.version=2.2.0",
-    "env": "development"
+    "env": "development",
+    "goal": "-Dplay.version=2.2.0"
   },
   "hooks": {
      "postDeploy": "clevercloud/play.json"
