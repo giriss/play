@@ -1,5 +1,6 @@
 {
   "deploy": {
-    "goal": "-Dplay.version=2.2.0"
+    "goal": "-Dplay.version=2.2.0",
+    "env": "development"
   }
 }
