@@ -5,6 +5,8 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET     /json                       controllers.Application.json
+
 # Welcome
 GET     /welcome                    controllers.Welcome.index
 GET     /welcome/                   controllers.Welcome.index
