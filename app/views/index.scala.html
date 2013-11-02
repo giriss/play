@@ -1,6 +1,6 @@
 @(message: String="")
-<!-- main(title, styles, scripts)(content) -->
-@main(title="Welcome to Play", styles=List("name", "id"), scripts=List("scr", "ipt", "qwerty")) {
+<!-- main(title:String, styles:List[String], scripts:List[String])(content:Html) -->
+@main("Welcome to Play", styles=List("egstyle1", "egstyle2"), scripts=List("egscript1", "egscript2")) {
 
     <h1>@message</h1>
     <h2>Hello Play..!</h2>
