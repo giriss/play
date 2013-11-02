@@ -16,6 +16,15 @@ object Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
   
+  def json = Action {
+    import play.api.libs.json._
+    Ok(JsObject(
+      Seq(
+        "message" -> JsString("It works !!")
+      )
+    ))
+  }
+  
   def task = Action {
     Ok(views.html.task(Task.all(), taskForm))
   }
