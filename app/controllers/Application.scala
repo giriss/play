@@ -43,5 +43,9 @@ object Application extends Controller {
     Task.delete(id)
     Redirect(routes.Application.task)
   }
+  
+  def find = Action {
+    Ok(views.html.find(Task.getFirst("label", "Hi...")))
+  }
 
 }
