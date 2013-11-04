@@ -11,7 +11,7 @@
             <li>
                 @task(0)
                 
-                @form(routes.Application.deleteTask(task(1))) {
+                @form(routes.Application.deleteTask(task(1).toInt)) {
                     <input type="submit" value="Delete">
                 }
             </li>
