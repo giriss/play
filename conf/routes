@@ -13,6 +13,9 @@ GET     /welcome/                   controllers.Welcome.index
 POST    /welcome/form               controllers.Welcome.formSubmit
 POST    /welcome/form/              controllers.Welcome.formSubmit
 
+# Find
+GET     /find                       controllers.Application.find
+
 # Task
 GET     /task                       controllers.Application.task
 POST    /task                       controllers.Application.newTask
