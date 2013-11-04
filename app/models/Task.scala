@@ -12,7 +12,7 @@ object Task {
   val task = {
     get[Long]("id") ~ 
     get[String]("label") map {
-      case id~label => Task(id, label)
+      case id~label => List(id, label)
     }
   }
 
