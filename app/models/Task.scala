@@ -16,7 +16,7 @@ object Task {
     }
   }
 
-  def all(): List[Task] = DB.withConnection { implicit c =>
+  def all(): List[List[String]] = DB.withConnection { implicit c =>
     SQL("select * from task").as(task *)
   }
   
