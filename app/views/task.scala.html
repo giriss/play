@@ -9,9 +9,9 @@
     <ul>
         @tasks.map { task =>
             <li>
-                @task.label
+                @task(0)
                 
-                @form(routes.Application.deleteTask(task.id)) {
+                @form(routes.Application.deleteTask(task(1))) {
                     <input type="submit" value="Delete">
                 }
             </li>
