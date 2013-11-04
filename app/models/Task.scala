@@ -12,11 +12,11 @@ object Task {
   val task = {
     get[Long]("id") ~ 
     get[String]("label") map {
-      case id~label => List(id.toString, label)
+      case id~label => Task(id, label)
     }
   }
 
-  def all(): List[List[String]] = DB.withConnection { implicit c =>
+  def all(): List[Task] = DB.withConnection { implicit c =>
     SQL("select * from task").as(task *)
   }
   
