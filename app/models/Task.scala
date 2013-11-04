@@ -37,7 +37,10 @@ object Task {
   }
   
   def getFirst(row:String, value:String) : Task = DB.withConnection { implicit c =>
-    SQL("select * from task where {row} = {value}").as(task)
+    SQL("select * from task where {row} = {value}").on(
+      'row -> row,
+      'value -> value
+      ).as(task)
   }
   
 }
