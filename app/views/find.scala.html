@@ -1,10 +1,6 @@
 @(task:Task)
 
 @main("Search"){
-  @if(task.size == 0){
-    <h1>No query found</h1>
-  } else {
     <h1>You have @task.size result</h1>
     <h2>task id = @task.id, label = @task.label</h2>
-  }
 }
