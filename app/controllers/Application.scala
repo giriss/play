@@ -46,12 +46,11 @@ object Application extends Controller {
   
   def find(row:String=null, value:String=null) = Action {
     
+    var result:Task = Task.getFirst()
     if(row == "id"){
       result = Task.getFirst(id=value.toInt)
     }else if(row == "label"){
       result = Task.getFirst(label=value)
-    }else{
-      result = Task.getFirst()
     }
     
     Ok(views.html.find(result))
