@@ -14,7 +14,7 @@ object User {
   }
   
   def all() : List[User] = DB.withConnection { implicit c =>
-    SQL("select * from users").as(user *)
+    SQL("select * from user").as(user *)
   }
   
 }
