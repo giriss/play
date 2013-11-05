@@ -20,7 +20,8 @@ POST    /welcome/form/              controllers.Welcome.formSubmit
 
 
 # Find
-GET     /find/:row/:value           controllers.Application.find(row:String=null, value:String=null)
+GET     /find                       controllers.Application.find(row:String=null, value:String=null)
+GET     /find/:row/:value           controllers.Application.find(row:String, value:String)
 
 
 # Task
