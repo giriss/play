@@ -12,4 +12,8 @@ object User {
   val user = {
     get[Int]("id") ~ get[String]("name") ~ get[String]("email") map( case id~name~email => User(id, name, email) )
   }
+  
+  def all() : List[User] = {
+    SQL("select * from users").as(user *)
+  }
 }
