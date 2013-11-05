@@ -45,7 +45,7 @@ object Application extends Controller {
   }
   
   def find = Action {
-    Ok(views.html.find(Task.getFirst("label", "Hi...")))
+    Ok(views.html.find(Task.getFirst(label = "Hi...")))
   }
 
 }
