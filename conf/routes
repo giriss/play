@@ -14,8 +14,7 @@ POST    /welcome/form               controllers.Welcome.formSubmit
 POST    /welcome/form/              controllers.Welcome.formSubmit
 
 # Find
-GET     /find                       controllers.Application.find
-GET     /find/:row/:value           controllers.Application.find(row:String, value:String)
+GET     /find/:row/:value           controllers.Application.find(row:String=null, value:String=null)
 
 # Task
 GET     /task                       controllers.Application.task
