@@ -2,24 +2,34 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+
 # Home page
 GET     /                           controllers.Application.index
 
 GET     /json                       controllers.Application.json
 
+
 # Welcome
 GET     /welcome                    controllers.Welcome.index
+
 GET     /welcome/                   controllers.Welcome.index
+
 POST    /welcome/form               controllers.Welcome.formSubmit
+
 POST    /welcome/form/              controllers.Welcome.formSubmit
+
 
 # Find
 GET     /find/:row/:value           controllers.Application.find(row:String=null, value:String=null)
 
+
 # Task
 GET     /task                       controllers.Application.task
+
 POST    /task                       controllers.Application.newTask
+
 POST    /task/:id/delete            controllers.Application.deleteTask(id: Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
