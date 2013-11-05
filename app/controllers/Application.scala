@@ -44,8 +44,17 @@ object Application extends Controller {
     Redirect(routes.Application.task)
   }
   
-  def find = Action {
-    Ok(views.html.find(Task.getFirst(label = "Hi...")))
+  def find(row:String=null, value:String=null) = Action {
+    
+    if(row == "id"){
+      result = Task.getFirst(id=value.toInt)
+    }else if(row == "label"){
+      result = Task.getFirst(label=value)
+    }else{
+      result = Task.getFirst()
+    }
+    
+    Ok(views.html.find(result)
   }
 
 }
