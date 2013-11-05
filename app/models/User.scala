@@ -13,7 +13,7 @@ object User {
     get[Int]("id") ~ get[String]("name") ~ get[String]("email") map( case id~name~email => User(id, name, email) )
   }
   
-  def all() : List[User] = {
+  def all() : List[User] = DB.withConnection { implicit c =>
     SQL("select * from users").as(user *)
   }
 }
