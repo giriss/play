@@ -54,7 +54,7 @@ object Application extends Controller {
       result = Task.getFirst()
     }
     
-    Ok(views.html.find(result)
+    Ok(views.html.find(result))
   }
 
 }
