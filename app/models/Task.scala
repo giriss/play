@@ -37,17 +37,17 @@ object Task {
   }
   
   def getFirst(id:Int=0, label:String=null) : Task = DB.withConnection { implicit c =>
-    var query:String = "where "
+    var query:String = " where "
     if(id != 0 && label != null){
-      query = s"id = '${id}' and label = '${label}'"
+      query += s"id = '${id}' and label = '${label}'"
     }else if(id != 0){
-      query = s"id = '${id}'"
+      query += s"id = '${id}'"
     }else if(label != null){
-      query = s"label = '${label}'"
+      query += s"label = '${label}'"
+    }else{
+      query = ""
     }
-    SQL(s"select * from task ${query} limit 1").on(
-      'value -> value
-    ).as(task.single)
+    SQL(s"select * from task${query} limit 1").as(task.single)
   }
   
 }
