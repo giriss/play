@@ -16,4 +16,14 @@ object User {
   def all() : List[User] = DB.withConnection { implicit c =>
     SQL("select * from users").as(user *)
   }
+  
+  def create(name:String, email:String) {
+      DB.withConnection{ implicit c =>
+          SQL("insert into users (name, email) values ({name}, {email})").on(
+              'name -> name,
+              'email -> email
+          ).executeUpdate()
+      }
+  }
+  
 }

@@ -12,8 +12,8 @@ object Users extends Controller {
     val userForm = Form(
         mapping(
             "id" -> number,
-            "name" -> text,
-            "email" -> text
+            "name" -> nonEmptyText(minLength=5, maxLength=55),
+            "email" -> email
         )(User.apply)(User.unapply)
     )
     
@@ -22,8 +22,13 @@ object Users extends Controller {
     }
     
     def post = Action{ implicit request =>
-        var data:User = userForm.bindFromRequest.get
-        Ok(data.name)
+        userForm.bindFromRequest.fold(
+            errors => BadRequest(views.html.user(User.all(), errors)),
+            user => {
+                User.create(user.name, user.email)
+                Redirect(routes.Users.index)
+            }
+        )
     }
     
 }
