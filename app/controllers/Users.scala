@@ -11,7 +11,7 @@ object Users extends Controller {
     
     val userForm = Form(
         mapping(
-            "id" -> number,
+            "id" -> ignored(0),
             "name" -> nonEmptyText(minLength=5, maxLength=55),
             "email" -> email
         )(User.apply)(User.unapply)

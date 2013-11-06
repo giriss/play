@@ -3,19 +3,18 @@
 @main("List of users"){
     <ul>
         @for(user <- users){
-            <li>@user.email</li>
+            <li>@(s"(id: ${user.id}) ${user.email}")</li>
         }
     </ul>
         @helper.form(action = routes.Users.post()){
-            @helper.inputText(userForm("id"))
             @helper.inputText(userForm("name"))
             @helper.inputText(userForm("email"))
             <input type="submit" />
         }
     <ul>
-        @if(userForm.hasErrors){
-            @userForm.errors.foreach{ error =>
-                <li>@(error.key): @error.message</li>
+        @if(userForm.hasGlobalErrors){
+            @userForm.globalErrors.foreach{ error =>
+                <li>@error.message</li>
             }
         }
     </ul>
