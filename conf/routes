@@ -19,6 +19,12 @@ POST    /welcome/form               controllers.Welcome.formSubmit
 POST    /welcome/form/              controllers.Welcome.formSubmit
 
 
+# Users
+GET     /users                      controllers.Users.index
+
+POST    /users                      controllers.Users.post
+
+
 # Find
 GET     /find                       controllers.Application.find(row:String=null, value:String=null)
 
