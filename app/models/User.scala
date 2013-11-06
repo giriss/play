@@ -10,10 +10,10 @@ object User {
   import anorm.SqlParser._
   
   val user = {
-    get[Int]("id") ~ get[String]("name") ~ get[String]("email") map( case id~name~email => User(id, name, email) )
+    get[Int]("id") ~ get[String]("name") ~ get[String]("email") map{ case id~name~email => User(id, name, email) }
   }
   
   def all() : List[User] = DB.withConnection { implicit c =>
-    SQL("select * from user").as(user *)
+    SQL("select * from users").as(user *)
   }
 }

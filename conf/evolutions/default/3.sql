@@ -2,7 +2,7 @@
  
 # --- !Ups
 
-CREATE TABLE user
+CREATE TABLE users
 	(
      id int auto_increment primary key, 
      name varchar(255), 
@@ -12,4 +12,4 @@ CREATE TABLE user
  
 # --- !Downs
  
-DROP TABLE user;
+DROP TABLE users;
