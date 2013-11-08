@@ -6,15 +6,19 @@
             <li>@(s"(id: ${user.id}) ${user.email}")</li>
         }
     </ul>
-        @helper.form(action = routes.Users.post()){
-            @helper.inputText(userForm("name"))
-            @helper.inputText(userForm("email"))
-            <input type="submit" />
-        }
+    <hr />
+    @helper.form(action = routes.Users.post()){
+        @helper.inputText(userForm("name"))
+        @helper.inputText(userForm("email"))
+        <input type="submit" />
+    }
+    @if(userForm.hasErrors){
+        <hr />
+    }
     <ul>
-        @if(userForm.hasGlobalErrors){
-            @userForm.globalErrors.foreach{ error =>
-                <li>@error.message</li>
+        @if(userForm.hasErrors){
+            @for(error <- userForm.errors){
+                <li>@error.key: @error.message- @error.args</li>
             }
         }
     </ul>
