@@ -10,7 +10,7 @@ import models.User
 
 object Users extends Controller{
 
-    val nonEmptyCheck: Constraint[String] = Constraint("Required")({
+    val nonEmptyCheck: Constraint[String] = Constraint("Required"){
         plainText =>
             val errors = plainText match {
                 case "" => Seq(ValidationError("Cannot be empty"))
@@ -21,7 +21,7 @@ object Users extends Controller{
         } else {
             Invalid(errors)
         }
-    })
+    }
 
     val nonEmptyEmail : Mapping[String] = email.verifying(nonEmptyCheck)
     
